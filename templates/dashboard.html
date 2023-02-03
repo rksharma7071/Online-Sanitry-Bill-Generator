@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <h1>Dashboard</h1>
+    <form method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+        <table>
+            {{form}}
+        </table>
+        <input type="submit" value="Submit">
+    </form>
+    
+    
+    
+
+    
+    {% if product %}
+        <table border="1">
+            <tr>
+                <th>Product Name</th>
+                <th>Unit</th>
+                <th>Amount</th>
+                <th>Category</th>
+                <th>Image</th>
+            </tr>
+            {% for p in product %}
+            <tr>
+                <td>{{p.pro_name}}</td>
+                <td>{{p.unit}}</td>
+                <td>{{p.amount}}</td>
+                <td>{{p.category}}</td>
+                <td><img src="{{p.img.url}}" alt="img-thumbnail" width="100px"></td>
+            </tr>
+            {% endfor %}
+        </table>
+            
+    {% else %}
+        <h1>No Record Found</h1>
+    {% endif %}
+
+    <a href="{% url 'bill' %}" >Bill</a><br>
+    <a href="{% url 'forget_password' %}" >Forget Password</a>
+    <br>
+    <a href="{% url 'user_logout' %}">Logout</a>
+</body>
+    <script>
+    {% if error == "yes"%}
+        alert("Enter Detail is not correct");
+    {% endif%}
+    
+    {% if error == "no" %}
+        alert("Login Successful!");
+    {% endif%}
+    </script>
+</html>
