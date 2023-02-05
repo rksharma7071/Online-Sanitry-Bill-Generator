@@ -10,7 +10,6 @@ urlpatterns = [
     path('user_logout/', views.user_logout, name='user_logout'),
     path('forget_password/', views.forget_password, name='forget_password'),
     path('bill/', views.bill, name='bill'),
-    path('bill_in', views.bill_in, name='bill_in'),
 ]
 if settings.DEBUG:
     urlpatterns +=static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

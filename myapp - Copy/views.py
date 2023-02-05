@@ -70,42 +70,4 @@ def forget_password(request):
 def bill(request):
     # product = Product.objects.all()
     return render(request, 'bill.html', locals())
-
-
-def bill_in(request):
-    if not request.user.is_authenticated:
-        return redirect(index)
     
-    if request.method == "POST":
-        form = CustomerForm(request.POST)
-        if form.is_valid():
-            form.save()
-            name = request.POST.get('name')
-            user = Customer.objects.get(name=name)
-            return render(request, 'bill_out.html', locals())
-
-    else:
-        form = CustomerForm()
-    customer = Customer.objects.all()
-    
-    return render(request, 'bill_in.html', locals())
-
-
-def bill_out(request):
-    if not request.user.is_authenticated:
-        return redirect(index)
-    
-    if request.method == "POST":
-        form = Product(request.POST)
-        if form.is_valid():
-            form.save()
-            name = request.POST.get('name')
-            
-            user = Customer.objects.get(name=name)
-            return render(request, 'bill_out.html', locals())
-
-    else:
-        form = CustomerForm()
-    customer = Customer.objects.all()
-    
-    return render(request, 'bill_in.html', locals())

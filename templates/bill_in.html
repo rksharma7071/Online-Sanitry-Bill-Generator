@@ -1,0 +1,99 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Bootstrap demo</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+  </head>
+  <body>     
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col text-center bg-light p-2 ">
+                <h2>ANANTA DISTRIBUTERS</h2>
+                <p class="m-0">Chauhan Market, Near Yashoda Poloyclinic, Bakshi Ka Talab Lucknow- 226201</p>
+                <p class="m-0">Phone No: 9000000000 | Email : demo@gmail.com</p>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col p-3 text-center border border-1 border-dark  ">
+                <h4>TAX INVOICE</h4>
+            </div>
+        </div>
+
+        <div class="row p-3">
+            <div class="col">
+                <form action="" method="post">
+                    {% csrf_token %}
+                    {{form}}
+                    <input type="submit" value="Submit">
+                </form>
+            </div>
+        </div>
+        
+        {% comment %} <div class="row">
+            <div class="col pt-3 p-0 ">
+                <table class="table table-bordered border-dark ">
+                    <thead>
+                        <tr>
+                            <th>Sr.</th>
+                            <th>Description</th>
+                            <th>Quantity</th>
+                            <th>Rate</th>
+                            <th>Amount</th>
+                            <th>Action</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>                            
+                            <td scope="row"></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        <form action="">
+                            <tr>
+                                <td>01</td>
+                                <th><input type="string"></th>
+                                <th><input type="number"></th>
+                                <th><input type="number"></th>
+                                <th><input type="number"></th>
+                                <th><input type="submit" value="Add"></th>
+                            </tr>
+                        </form>
+                        
+                    </tbody>
+                    <tfoot class="text-end">
+                        <tr>
+                            <td colspan="4" class="h6">Total Amount Defore Tax</td>
+                            <td>47801.60</td>
+                        </tr>
+                        <tr>
+                            <td colspan="4" class="h6">Add CGST</td>
+                            <td>717.02</td>
+                        </tr>
+                        <tr>
+                            <td colspan="4" class="h6">Add SGST</td>
+                            <td>717.02</td>
+                        </tr>
+                        <tr>
+                            <td colspan="3" >Rupees Forty Nine Thousand Two Hundred Thirty Six Only</td>
+                            <td colspan="" class="h5">Grand Total</td>
+                            <td class="h5">49236.00</td>
+                        </tr>
+                    </tfoot>
+                </table>
+            </div>
+            <div class="row m-0 p-0">
+                <div class="col border border-dark">
+                    <b>Declaration:</b> We declare that this invoice shows the actual price of the goods described and that all particulars are true and correct.</th>
+                </div>
+            </div>
+        </div> {% endcomment %}
+
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
+  </body>
+</html>
